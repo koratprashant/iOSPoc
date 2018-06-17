@@ -13,6 +13,9 @@
 		A1E62C6B20D4E34A00E9B0DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1E62C6A20D4E34A00E9B0DF /* Assets.xcassets */; };
 		A1E62C6E20D4E34A00E9B0DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1E62C6C20D4E34A00E9B0DF /* LaunchScreen.storyboard */; };
 		A1E62C7120D4E34A00E9B0DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E62C7020D4E34A00E9B0DF /* main.m */; };
+		A1E62C7A20D4FADF00E9B0DF /* PKHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E62C7920D4FADF00E9B0DF /* PKHttpManager.m */; };
+		A1E62C8020D513C600E9B0DF /* PKFact.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E62C7F20D513C600E9B0DF /* PKFact.m */; };
+		A1E62C8420D5377100E9B0DF /* PKFactsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E62C8320D5377100E9B0DF /* PKFactsCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,13 @@
 		A1E62C6D20D4E34A00E9B0DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1E62C6F20D4E34A00E9B0DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1E62C7020D4E34A00E9B0DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A1E62C7820D4FADF00E9B0DF /* PKHttpManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKHttpManager.h; sourceTree = "<group>"; };
+		A1E62C7920D4FADF00E9B0DF /* PKHttpManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKHttpManager.m; sourceTree = "<group>"; };
+		A1E62C7B20D5053500E9B0DF /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		A1E62C7E20D513C600E9B0DF /* PKFact.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKFact.h; sourceTree = "<group>"; };
+		A1E62C7F20D513C600E9B0DF /* PKFact.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKFact.m; sourceTree = "<group>"; };
+		A1E62C8220D5377100E9B0DF /* PKFactsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKFactsCell.h; sourceTree = "<group>"; };
+		A1E62C8320D5377100E9B0DF /* PKFactsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKFactsCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +68,8 @@
 		A1E62C6020D4E34600E9B0DF /* iOSPoc */ = {
 			isa = PBXGroup;
 			children = (
+				A1E62C8120D5374C00E9B0DF /* Cell */,
+				A1E62C7720D4FA1100E9B0DF /* Model */,
 				A1E62C6120D4E34600E9B0DF /* AppDelegate.h */,
 				A1E62C6220D4E34600E9B0DF /* AppDelegate.m */,
 				A1E62C6420D4E34600E9B0DF /* ViewController.h */,
@@ -67,8 +79,45 @@
 				A1E62C6C20D4E34A00E9B0DF /* LaunchScreen.storyboard */,
 				A1E62C6F20D4E34A00E9B0DF /* Info.plist */,
 				A1E62C7020D4E34A00E9B0DF /* main.m */,
+				A1E62C7B20D5053500E9B0DF /* Constants.h */,
 			);
 			path = iOSPoc;
+			sourceTree = "<group>";
+		};
+		A1E62C7720D4FA1100E9B0DF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A1E62C7D20D5138700E9B0DF /* Pojo */,
+				A1E62C7C20D5137200E9B0DF /* APIHelper */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A1E62C7C20D5137200E9B0DF /* APIHelper */ = {
+			isa = PBXGroup;
+			children = (
+				A1E62C7820D4FADF00E9B0DF /* PKHttpManager.h */,
+				A1E62C7920D4FADF00E9B0DF /* PKHttpManager.m */,
+			);
+			path = APIHelper;
+			sourceTree = "<group>";
+		};
+		A1E62C7D20D5138700E9B0DF /* Pojo */ = {
+			isa = PBXGroup;
+			children = (
+				A1E62C7E20D513C600E9B0DF /* PKFact.h */,
+				A1E62C7F20D513C600E9B0DF /* PKFact.m */,
+			);
+			path = Pojo;
+			sourceTree = "<group>";
+		};
+		A1E62C8120D5374C00E9B0DF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A1E62C8220D5377100E9B0DF /* PKFactsCell.h */,
+				A1E62C8320D5377100E9B0DF /* PKFactsCell.m */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,8 +190,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1E62C7A20D4FADF00E9B0DF /* PKHttpManager.m in Sources */,
 				A1E62C6620D4E34600E9B0DF /* ViewController.m in Sources */,
 				A1E62C7120D4E34A00E9B0DF /* main.m in Sources */,
+				A1E62C8020D513C600E9B0DF /* PKFact.m in Sources */,
+				A1E62C8420D5377100E9B0DF /* PKFactsCell.m in Sources */,
 				A1E62C6320D4E34600E9B0DF /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
