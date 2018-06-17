@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ViewController : UIViewController
+#import "Constants.h"
+#import "PKHttpManager.h"
+@interface ViewController : UIViewController{
+    PKHttpManager *httpManager;
+}
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
+@property (weak, nonatomic) IBOutlet UITableView *tblFacts;
 
 
 @end

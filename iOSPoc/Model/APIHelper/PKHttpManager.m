@@ -9,7 +9,6 @@
 #import "PKHttpManager.h"
 
 @implementation PKHttpManager
-
 #pragma mark - Initialiser
 -(id)initWithUrlString:(NSString*)aURLString delegate:(id)APIDelegate withTag:(int)tag{
     self = [super init];
@@ -23,7 +22,13 @@
     }
     return self;
 }
-
+-(void)downloadImageFromStringURL:(NSString*)strUrl withCompletion:(void(^)(NSData *))callback{
+    NSURL *url = [NSURL URLWithString:[strUrl stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
+        callback(data);
+    }];
+}
 
 #pragma mark - Connection Data delegate
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
@@ -32,7 +37,10 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection{
     if([self.delegate respondsToSelector:@selector(didConnectionFinishLoadingWithData:)]){
-        [_delegate didConnectionFinishLoadingWithData:receiveddata];
+        NSString  *strData = [[NSString alloc] initWithData:receiveddata encoding:NSISOLatin1StringEncoding];
+        NSData *properEncodeData = [strData dataUsingEncoding:NSUTF8StringEncoding];
+
+        [_delegate didConnectionFinishLoadingWithData:[NSMutableData dataWithData:properEncodeData]];
     }
 }
 #pragma mark - Connection Delegate

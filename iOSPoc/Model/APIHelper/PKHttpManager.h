@@ -36,4 +36,10 @@
  * @param tag tag to differentiate multiple request in same class
  */
 -(id)initWithUrlString:(NSString*)aURLString delegate:(id)APIDelegate withTag:(int)tag;
+/**
+ * @description This API is use to download image
+ * @param strUrl URL to load in NSString format
+ * @param callback This completion handler is retun the image data based on provided url
+ */
+-(void)downloadImageFromStringURL:(NSString*)strUrl withCompletion:(void(^)(NSData *))callback;
 @end
